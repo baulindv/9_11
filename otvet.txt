@@ -1,0 +1,26 @@
+Адрес приложения: https://blooming-dawn-49115.herokuapp.com/
+Админка: https://blooming-dawn-49115.herokuapp.com/admin/login/?next=/admin/
+Логин:пароль - 1:1
+
+
+Список всех постов: https://blooming-dawn-49115.herokuapp.com/
+Информация об определённом посте: https://blooming-dawn-49115.herokuapp.com/1
+
+
+Список категорий с входящими в них постами: https://blooming-dawn-49115.herokuapp.com/categories/
+Список постов в конкретной категории: https://blooming-dawn-49115.herokuapp.com/categories/1
+
+
+Создание категории:
+new_cat = requests.post('https://blooming-dawn-49115.herokuapp.com/categories/', data={'name': 'cat from requests'})
+Ответ, включающий ID категории для последующего добавления постов:
+new_cat.json()
+{'id': 4, 'name': 'cat from requests', 'posts': []}
+
+
+Создание поста в новой категории:
+new_post = requests.post('https://blooming-dawn-49115.herokuapp.com', data={'title': 'post to new cat from requests', 'author': '1', 'category': '4', 'status': 'P', 'content': 'some content'})
+new_post.json()
+
+Посмотреть созданную категорию и пост в ней:
+https://blooming-dawn-49115.herokuapp.com/categories/4
